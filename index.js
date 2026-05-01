@@ -10,5 +10,5 @@ app.use("/usuarios", router);
 
 const PORTA = 3000;
 app.listen(PORTA, () => {
-    console.log(`API rodando em https:localhost:${PORTA}`)
+    console.log(`API rodando em http://localhost:${PORTA}`)
 })

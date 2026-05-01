@@ -29,10 +29,12 @@ let usuarios = [
   }
 ]
 
-const listar = (req, res) => {res.json(usuarios)}
+const listar = (req, res) => res.json(usuarios)
+
 const filtrarid = (req, res) => {
-  const id = perseInt(req.params.id) 
-  const usuarios = usuarios.find(t => t.id === id)
-  res.json(usuarios)
+  const usuario = usuarios.find(u => u.id === Number(req.params.id))
+  if (!usuario) return res.status(404).json({ message: "Usuário não encontrado" })
+  res.json(usuario)
 }
+
 export default { listar, filtrarid} 
