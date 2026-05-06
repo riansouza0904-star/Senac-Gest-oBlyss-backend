@@ -37,4 +37,13 @@ const filtrarid = (req, res) => {
   res.json(usuario)
 }
 
+const criarUsuarios = (req, res) => {
+  const { nome, telefone, email, idade, senha} = req.body
+  if (!nome) {
+    return res.status(404).json ({ erro: "Usuario nao encontrado"});
+  }
+}
+
+
+
 export default { listar, filtrarid} 
